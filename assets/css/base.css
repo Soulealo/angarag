@@ -1,0 +1,62 @@
+/* ─────────────────────────────────────────
+   base.css — CSS Variables, Reset, Body
+───────────────────────────────────────── */
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #F8F9FC;
+  --white: #FFFFFF;
+  --sidebar: #111318;
+  --sidebar-hover: rgba(255,255,255,0.07);
+  --sidebar-active: rgba(255,255,255,0.12);
+  --border: #E8EAF0;
+  --border-strong: #D0D3DC;
+  --text-primary: #0D0F14;
+  --text-secondary: #6B7280;
+  --text-tertiary: #9CA3AF;
+  --text-sidebar: rgba(255,255,255,0.6);
+  --text-sidebar-active: #FFFFFF;
+  --blue: #2563EB;
+  --blue-light: #EFF4FF;
+  --blue-dark: #1D4ED8;
+  --green: #059669;
+  --green-light: #ECFDF5;
+  --amber: #D97706;
+  --amber-light: #FFFBEB;
+  --red: #DC2626;
+  --red-light: #FEF2F2;
+  --purple: #7C3AED;
+  --purple-light: #F5F3FF;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+  --shadow: 0 4px 12px rgba(0,0,0,0.08), 0 2px 4px rgba(0,0,0,0.04);
+  --shadow-lg: 0 10px 40px rgba(0,0,0,0.12), 0 4px 12px rgba(0,0,0,0.06);
+  --radius: 12px;
+  --radius-sm: 8px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+  --font: 'Plus Jakarta Sans', -apple-system, sans-serif;
+  --role-accent: #2563EB;
+  --role-accent-light: #EFF4FF;
+}
+
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text-primary);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ─── Screen visibility ─── */
+#screen-login { display: flex; min-height: 100vh; }
+#screen-app   { display: none; height: 100vh; overflow: hidden; }
+
+/* ─── Scrollbar ─── */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 100px; }

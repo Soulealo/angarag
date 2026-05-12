@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ДСЦТС — Бүтээгдэхүүн</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/base.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+  <link rel="stylesheet" href="/assets/css/shop.css">
+</head>
+<body class="shop-body">
+  <div class="shop-shell">
+    <nav class="shop-nav">
+      <a class="shop-brand" href="/products.html"><span class="shop-brand-mark">⚡</span><span>ДСЦТС</span></a>
+      <div class="shop-links">
+        <a class="shop-link active" href="/products.html">Бүтээгдэхүүн</a>
+        <a class="shop-link" href="/cart.html">Сагс (<span data-cart-count>0</span>)</a>
+        <a class="shop-link" href="/login.html">Нэвтрэх</a>
+      </div>
+    </nav>
+
+    <section class="shop-hero">
+      <div>
+        <h1>Цахилгаан засвар, үйлчилгээний бүтээгдэхүүн</h1>
+        <p>Админ самбарт нэмсэн бүтээгдэхүүнүүд энд шууд харагдана.</p>
+      </div>
+    </section>
+
+    <div class="shop-toolbar">
+      <div class="section-title">Бүх бүтээгдэхүүн</div>
+      <select class="form-input" id="category-filter" style="width:auto;min-width:190px">
+        <option value="">Бүх ангилал</option>
+      </select>
+    </div>
+
+    <section class="shop-grid" id="product-grid">
+      <div class="empty-shop">Уншиж байна...</div>
+    </section>
+  </div>
+
+  <script src="/assets/js/api.js"></script>
+  <script src="/assets/js/shop.js"></script>
+</body>
+</html>

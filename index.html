@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="mn">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ДСЦТС — Цахилгаан Засвар</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/login.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+
+<body>
+
+  <!-- ═══════════════════════════════════════
+     LOGIN SCREEN
+═══════════════════════════════════════ -->
+  <div id="screen-login">
+    <div class="login-left">
+      <div class="login-brand">
+        <div class="login-brand-icon">⚡</div>
+        <span class="login-brand-name">ДСЦТС</span>
+      </div>
+      <div class="login-hero">
+        <h1>Цахилгаан Засвар Үйлчилгээний Систем</h1>
+        <p>Захиалга, засварчин, төлбөр — бүгдийг нэг дороос хянах ухаалаг тавцан.</p>
+      </div>
+      <div class="login-stats">
+        <div class="login-stat">
+          <div class="login-stat-num">1,240+</div>
+          <div class="login-stat-label">Захиалга нийт</div>
+        </div>
+        <div class="login-stat">
+          <div class="login-stat-num">5</div>
+          <div class="login-stat-label">Цахилгаанчин</div>
+        </div>
+        <div class="login-stat">
+          <div class="login-stat-num">4.8★</div>
+          <div class="login-stat-label">Дундаж үнэлгээ</div>
+        </div>
+        <div class="login-stat">
+          <div class="login-stat-num">98%</div>
+          <div class="login-stat-label">Гүйцэтгэлийн хувь</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="login-right">
+      <div class="login-form-wrap">
+        <h2 class="login-form-title">Нэвтрэх</h2>
+        <p class="login-form-sub">Өөрийн үүргээ сонгоно уу</p>
+
+        <div class="role-picker">
+          <button class="role-btn" data-role="admin" onclick="selectRole('admin', this)">
+            <div class="role-btn-icon">🛡️</div>
+            <div class="role-btn-name">Админ</div>
+            <div class="role-btn-desc">Систем бүгдийг хянах</div>
+          </button>
+          <button class="role-btn" data-role="manager" onclick="selectRole('manager', this)">
+            <div class="role-btn-icon">📋</div>
+            <div class="role-btn-name">Менежер</div>
+            <div class="role-btn-desc">Захиалга удирдах</div>
+          </button>
+          <button class="role-btn" data-role="electrician" onclick="selectRole('electrician', this)">
+            <div class="role-btn-icon">⚡</div>
+            <div class="role-btn-name">Цахилгаанчин</div>
+            <div class="role-btn-desc">Захиалга хүлээн авах</div>
+          </button>
+          <button class="role-btn" data-role="customer" onclick="selectRole('customer', this)">
+            <div class="role-btn-icon">🏠</div>
+            <div class="role-btn-name">Хэрэглэгч</div>
+            <div class="role-btn-desc">Засвар захиалах</div>
+          </button>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Нэвтрэх нэр</label>
+          <input class="form-input" type="text" placeholder="Жишээ: admin@dscts.mn" id="login-user-input">
+        </div>
+        <div class="form-group" style="margin-bottom:24px">
+          <label class="form-label">Нууц үг</label>
+          <input class="form-input" type="password" placeholder="••••••••" id="login-pass-input">
+        </div>
+
+        <button class="login-btn" onclick="doLogin()">
+          <span>Нэвтрэх</span>
+          <span>→</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════
+     APP SHELL
+═══════════════════════════════════════ -->
+  <div id="screen-app">
+    <div class="app-shell">
+
+      <!-- SIDEBAR -->
+      <div class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+          <div class="sidebar-brand">
+            <div class="sidebar-brand-icon" id="sb-icon">⚡</div>
+            <span class="sidebar-brand-name">ДСЦТС</span>
+          </div>
+          <div class="sidebar-user">
+            <div class="sidebar-avatar" id="sb-avatar">А</div>
+            <div class="sidebar-user-info">
+              <div class="sidebar-user-name" id="sb-name">Нэвтэрсэн хэрэглэгч</div>
+              <div class="sidebar-user-role" id="sb-role">Үүрэг</div>
+            </div>
+          </div>
+        </div>
+        <div class="sidebar-nav" id="sidebar-nav"></div>
+        <div class="sidebar-footer">
+          <button class="sidebar-footer-btn" onclick="doLogout()">
+            <div class="nav-icon-wrap" style="font-size:13px">↩</div>
+            <span>Гарах</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- MAIN AREA -->
+      <div class="main-area">
+        <div class="topbar">
+          <div class="topbar-left">
+            <span class="topbar-page-title" id="topbar-title">Хяналтын самбар</span>
+            <span class="topbar-breadcrumb" id="topbar-crumb">ДСЦТС › Нүүр</span>
+          </div>
+          <div class="topbar-right">
+            <button class="topbar-icon-btn" title="Мэдэгдэл">
+              🔔
+              <span class="notif-dot"></span>
+            </button>
+            <button class="topbar-icon-btn" title="Тусламж">❓</button>
+            <div class="topbar-avatar" id="topbar-avatar">А</div>
+          </div>
+        </div>
+        <div class="content-area" id="content-area"></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal-overlay" id="modal-overlay" onclick="handleOverlayClick(event)">
+    <div class="modal" id="modal-box"></div>
+  </div>
+
+  <!-- Toasts -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/helpers.js"></script>
+  <script src="js/panels-admin.js"></script>
+  <script src="js/panels-manager.js"></script>
+  <script src="js/panels-electrician.js"></script>
+  <script src="js/panels-customer.js"></script>
+  <script src="js/actions.js"></script>
+  <script src="js/ui.js"></script>
+
+</body>
+
+</html>
