@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "DSCTS app with MongoDB-backed products, orders, authentication, and admin access control.",
   "main": "server.js",
+  "engines": {
+    "node": "22.x"
+  },
   "scripts": {
     "dev": "nodemon server.js",
     "start": "node server.js",
