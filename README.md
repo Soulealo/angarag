@@ -31,7 +31,7 @@ Set these in Render service settings under **Environment**:
 MONGO_URI=mongodb+srv://USERNAME:PASSWORD@cluster0.example.mongodb.net/dscts_app?retryWrites=true&w=majority
 JWT_SECRET=use-a-long-random-secret
 JWT_EXPIRES_IN=7d
-CLIENT_ORIGIN=https://your-render-service.onrender.com
+CLIENT_ORIGIN=https://angarag.onrender.com
 ```
 
 Build command:
